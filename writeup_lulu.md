@@ -24,6 +24,7 @@ The goals / steps of this project are the following:
 [image5]: ./plots/images_from_web.png
 [image6]: ./plots/predicted_images_from_web.png
 [image7]: ./plots/predict_probability.png
+[image7]: ./plots/activation_visual.png
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -61,7 +62,7 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 
 #### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
-As a first step, I decided to convert the images to grayscale and normalize the images.
+I convert the images to grayscale and then normalize the images.
 
 Here are examples of traffic sign images after preprocessing.
 
@@ -75,15 +76,15 @@ My final model consisted of the following layers:
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x1 grey scaled image   							| 
-| Convolution 5x5     	| 1x1 stride, valid padding, outputs 28x28x36 	|
+| Convolution 3x3     	| 1x1 stride, valid padding, outputs 30x30x32 	|
 | RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 14x14x36 				|
-| Convolution 5x5	    | 1x1 stride, valid padding, outputs 10x10x72 	|
+| Max pooling	      	| 2x2 stride,  outputs 15x15x32 				|
+| Convolution 4x4	    | 1x1 stride, valid padding, outputs 12x12x64 	|
 | RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 5x5x72 				|
-| Convolution 3x3	    | 1x1 stride, valid padding, outputs 3x3x144 	|
+| Max pooling	      	| 2x2 stride,  outputs 6x6x64 				|
+| Convolution 3x3	    | 1x1 stride, valid padding, outputs 4x4x128 	|
 | RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 2x2x144 				|
+| Max pooling	      	| 1x1 stride,  outputs 3x3x128 				|
 | Fully connected		| outputs 120        									|
 | RELU					|												|
 | Fully connected		| outputs 84        									|
@@ -127,7 +128,7 @@ Here are five German traffic signs that I found on the web:
 
 ![alt text][image5]
 
-The first image might be difficult to classify because ...
+The second and third image might be difficult to classify because they are blurry.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -164,5 +165,5 @@ Visualization
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
-
+![alt text][image8]
 
