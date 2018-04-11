@@ -18,8 +18,8 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./plots/training_count_summary.png
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
+[image2]: ./plots/all_count_summary.png
+[image3]: ./plots/random_examples.png
 [image4]: ./examples/placeholder.png "Traffic Sign 1"
 [image5]: ./examples/placeholder.png "Traffic Sign 2"
 [image6]: ./examples/placeholder.png "Traffic Sign 3"
@@ -51,9 +51,12 @@ signs data set:
 
 #### 2. Include an exploratory visualization of the dataset.
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how many images each class contains.
+Here is an exploratory visualization of the data set. It is a bar chart showing how many images each class contains, together with some sampled images from the dataset.
 
-![overall_distribution][image1]
+![train_distribution][image1]
+![overall_distribution][image2]
+![sample_images][image3]
+
 
 ### Design and Test a Model Architecture
 
