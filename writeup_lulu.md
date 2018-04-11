@@ -23,6 +23,7 @@ The goals / steps of this project are the following:
 [image4]: ./plots/preprocessed_images.jpg
 [image5]: ./plots/images_from_web.png
 [image6]: ./plots/predicted_images_from_web.png
+[image7]: ./plots/predict_probability.png
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
