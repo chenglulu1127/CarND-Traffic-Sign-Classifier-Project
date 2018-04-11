@@ -21,10 +21,8 @@ The goals / steps of this project are the following:
 [image2]: ./plots/all_count_summary.png
 [image3]: ./plots/random_examples.png
 [image4]: ./plots/preprocessed_images.jpg
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image5]: ./plots/images_from_web.png
+[image6]: ./plots/predicted_images_from_web.png
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -103,9 +101,9 @@ To train the model, I used Adam optimizer, 20 epochs, 128 batch size, learning r
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of 
-* validation set accuracy of 0.961
-* test set accuracy of 0.944
+* training set accuracy of 1
+* validation set accuracy of 0.959
+* test set accuracy of 0.946
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
@@ -126,8 +124,7 @@ If a well known architecture was chosen:
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![alt text][image5]
 
 The first image might be difficult to classify because ...
 
@@ -137,31 +134,32 @@ Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| No Entry      		| No Entry   									| 
+| Dangerous curve to the left     			| Dangerous curve to the left 										|
+| Go straight or left					| Go straight or left											|
+| Yield	      		| Yield					 				|
+| Stop			| Stop      							|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. 
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+For the first image, the model is sure that this is a No Entry sign (probability of 1), and the image does contain a No Entry sign. The top five soft max probabilities were [19, 23,  9, 20, 16]
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+For the third image, the model is relatively sure that this is a Go-straight-or-left sign (probability of 0.9), and the image does contain a Go-straight-or-left sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| .90         			| Go straight or left   									| 
+| .10     				| Roundabout mandatory 										|
+| .00					| Beware of ice/snow											|
+| .00	      			| Bicycles crossing					 				|
+| .00				    | No entry      							|
 
 
-For the second image ... 
+Visualization
+![alt text][image7]
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
