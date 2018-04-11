@@ -24,7 +24,7 @@ The goals / steps of this project are the following:
 [image5]: ./plots/images_from_web.png
 [image6]: ./plots/predicted_images_from_web.png
 [image7]: ./plots/predict_probability.png
-[image7]: ./plots/activation_visual.png
+[image8]: ./plots/activation_visual.png
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -107,17 +107,7 @@ My final model results were:
 * validation set accuracy of 0.959
 * test set accuracy of 0.946
 
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
-
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+I'm using LeNet architesture and tuning number of layers and parameters. At first I used two 5x5 convolutional layers with two fully connnected layers. It achieved around 90% test accuracy. Then I added more layers but reduce the strides from 5x5 to 3x3 and reduce the depth since the image size is very small (32x32). The initial version has overfitting problem. The accuracy on training dataset goes to 100% very quickly while the validation accuracy stays around 91%.
  
 
 ### Test a Model on New Images
@@ -128,7 +118,7 @@ Here are five German traffic signs that I found on the web:
 
 ![alt text][image5]
 
-The second and third image might be difficult to classify because they are blurry.
+The second and third image might be difficult to classify because they are blurry and they rarely occur in the training dataset according to the distribution plotted.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
